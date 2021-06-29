@@ -56,20 +56,37 @@
 
   margin: 0 auto;
 
+  @include respondMax($tab-port) {
+    width: 100% !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respondMax($tab-port) {
+      margin-bottom: $gutter-vertical-sm;
+    }
   }
 
   [class^="col-"] {
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respondMax($tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-sm;
+      }
     }
   }
 
   .col-1-of-2,
   .col-1-of-3,
   .col-1-of-4 {
-    flex: 1;
+    flex: 1 1 auto;
   }
 
   .col-2-of-3,
