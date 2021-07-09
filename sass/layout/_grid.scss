@@ -60,7 +60,6 @@
     width: 100% !important;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 50rem;
     padding: 0 3rem;
   }
 
@@ -87,6 +86,18 @@
   .col-1-of-3,
   .col-1-of-4 {
     flex: 1 1 auto;
+  }
+
+  .col-1-of-4,
+  .col-1-of-3 {
+    @include respondMax($tab-port) {
+      align-self: center;
+    }
+
+    @include respondMax($phone) {
+      margin: 0;
+      padding: 0 5rem;
+    }
   }
 
   .col-2-of-3,
